@@ -37,4 +37,10 @@ public class StaffServiceImpl implements StaffService {
 		}
 		return staff;
 	}
+
+	@Override
+	public void deleteStaffById(long id) {
+		// TODO Auto-generated method stub
+		this.staffRepository.deleteById(id);
+	}
 }
