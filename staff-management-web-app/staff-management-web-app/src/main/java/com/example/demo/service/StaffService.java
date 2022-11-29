@@ -6,4 +6,6 @@ import com.example.demo.model.Staff;
 
 public interface StaffService {
 	List<Staff> getAllStaffs();
+	void saveStaff(Staff staff);
+	Staff getStaffById(long id);
 }
