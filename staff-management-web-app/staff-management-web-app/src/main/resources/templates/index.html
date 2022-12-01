@@ -22,21 +22,21 @@
 				<tr>
 					<th>
 						<a th:href="@{'/page/' + ${currentPage} + '?sortField=firstName&sortDir=' + ${reverseSortDir}}">
-							Employee First Name</a>
+							Staff First Name</a>
 					</th>
 					<th>
 					<a th:href="@{'/page/' + ${currentPage} + '?sortField=lastName&sortDir=' + ${reverseSortDir}}">
-							Employee Last Name</a>
+							Staff Last Name</a>
 					</th>
 					<th>
 					<a th:href="@{'/page/' + ${currentPage} + '?sortField=email&sortDir=' + ${reverseSortDir}}">
-							Employee Email</a>
+							Staff Email</a>
 					</th>
 					<th> Actions </th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="employee : ${listEmployees}">
+				<tr th:each="staff : ${listStaffs}">
 					<td th:text="${staff.firstName}"></td>
 					<td th:text="${staff.lastName}"></td>
 					<td th:text="${staff.email}"></td>
