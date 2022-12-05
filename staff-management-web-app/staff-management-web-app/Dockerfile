@@ -1,4 +1,5 @@
-FROM openjdk:20-windowsservercore-ltsc2022
+# syntax=docker/dockerfile:1
+FROM openjdk:latest
 WORKDIR /app
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
