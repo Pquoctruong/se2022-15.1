@@ -85,7 +85,7 @@ Một số lệnh trong file Dockerfile:
 
 - **VOLUME <tên_thư_mục>**: dùng để truy cập hoặc liên kết một thư mục nào đó trong Container.
 
-## 1.6 Demo docker trong ứng dụng Springboot 
+### 1.6 Demo docker trong ứng dụng Springboot 
 Dockerfile
 ``` Dockerfile
 FROM openjdk:11
@@ -121,7 +121,7 @@ docker run -dp 8085:8083 \
 thatngn/springboot-docker:v1.0.0
 ```
 
-### 1.6 Các lệnh cơ bản trong Docker
+### 1.7 Các lệnh cơ bản trong Docker
 
 - docker images: Liệt kê các image
 - docker image build: Build image từ file Dockerfile.
