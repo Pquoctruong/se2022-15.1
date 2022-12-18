@@ -63,7 +63,7 @@ Sau đây là hình ảnh minh họa cho các mối liên hệ giữa các thàn
 ### 1.5 Viết Dockerfile
 Dockerfile là file config cho Docker để build ra image. Nó dùng một image cơ bản để xây dựng lớp image ban đầu. Một số image cơ bản: python, unbutu and alpine. Sau đó nếu có các lớp bổ sung thì nó được xếp chồng lên lớp cơ bản. Cuối cùng một lớp mỏng có thể được xếp chồng lên nhau trên các lớp khác trước đó.
 Cấu trúc của Dockerfile
-```
+``` dockerfile
 # Comment
 INSTRUCTION arguments
 ```
@@ -87,7 +87,7 @@ Một số lệnh trong file Dockerfile:
 
 ## 1.6 Demo docker trong ứng dụng Springboot 
 Dockerfile
-```
+``` Dockerfile
 FROM openjdk:11
 WORKDIR /app
 COPY .mvn/ .mvn
@@ -95,13 +95,13 @@ COPY mvnw pom.xml ./
 RUN ./mvnw dependency:go-offline
 COPY src ./src
 CMD ["./mvnw", "spring-boot:run"]
-```
+``` 
 Build image với Dockerfile
-```
+``` 
 docker build --tag springboot-docker .
 ```
 Tạo tag mới cho image vừa tạo ở trên
-```
+``` 
 docker tag springboot-docker:latest springboot-docker:v1.0.0
 ```
 
@@ -109,7 +109,7 @@ Push image lên Docker Hub
 ```
 docker push thatngn/springboot-docker:v1.0.0
 ```
-Xóa image docker 
+Xóa image 
 ```
 rm image-id/image-name
 ```
@@ -155,7 +155,7 @@ Docker compose là công cụ dùng để định nghĩa và run multi-container
 - Run docker-compose up để start và run app.
 
 Ví dụ
-```
+``` dockerfile
 version: '3.8'
 #containers -> services
 services:
@@ -191,15 +191,13 @@ volumes:
    mysql-springboot-config-deamond:
 ```
 File docker-compose.yml được tổ chức gồm 4 phần:
+
 | Directive         | Ý nghĩa       |
 | ------------- | ----------- |
 | version | Chỉ ra version của file Compose  |
 | services | Với Docker, một service là tên của một container |
 | networks | Phần này được sử dụng để cấu hình network cho ứng dụng. Có thể cài đặt network mặc định hoặc định nghĩa network chỉ định cho ứng dụng |
 | volumes | Gắn đường dẫn trên host machine được sử dụng trên container |
-| Yêu cầu ít dung lượng bộ nhớ hơn | Phân bổ bộ nhớ theo nhu cầu cần thiết |
-| Cô lập ở mức tiến trình, có thể kém an toàn hơn | Hoàn toàn bị cô lập và an toàn hơn |
-
 
 Với phần config services, có một vài directive thường được sử dụng:
 
