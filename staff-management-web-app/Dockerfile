@@ -1,8 +1,7 @@
 # syntax=docker/dockerfile:1
-FROM openjdk:20-oraclelinux8
+FROM openjdk:latest
+
 WORKDIR /app
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-RUN ./mvnw dependency:go-offline
-COPY src ./src
-CMD ["./mvnw", "spring-boot:run"]
+COPY /target/staff-management-web-app-0.0.1-SNAPSHOT.jar .
+CMD java -jar staff-management-web-app-0.0.1-SNAPSHOT.jar
+EXPOSE 8080/tcp

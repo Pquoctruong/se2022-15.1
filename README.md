@@ -88,7 +88,7 @@ Một số lệnh trong file Dockerfile:
 ### 1.6 Demo docker trong ứng dụng Springboot 
 Dockerfile
 ``` Dockerfile
-FROM openjdk:11
+FROM openjdk:latest
 WORKDIR /app
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
@@ -107,7 +107,7 @@ docker tag springboot-docker:latest springboot-docker:v1.0.0
 
 Push image lên Docker Hub
 ```
-docker push thatngn/springboot-docker:v1.0.0
+docker push <username>/springboot-docker:v1.0.0
 ```
 Xóa image 
 ```
@@ -118,7 +118,7 @@ Pull và start/run container
 docker run -dp 8085:8083 \
 -- name springboot-docker-container \
 -v "${pwd}:/app" \
-thatngn/springboot-docker:v1.0.0
+<username>/springboot-docker:v1.0.0
 ```
 
 ### 1.7 Các lệnh cơ bản trong Docker
@@ -170,12 +170,12 @@ services:
     networks:
       - backend
     environment:
-      MYSQL_USER: thatngn
-      MYSQL_PASSWORD: 123456
-      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: StudentManagement
   springboot-docker-container:
-    image: thatngn/springboot-docker:v1.0.0
+    image: <username>/springboot-docker:v1.0.0
     container_name: springboot-container
     ports:
       - 8085:8083
