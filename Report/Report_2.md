@@ -66,7 +66,7 @@ docker exec -ti mysql-springboot-container mysql -u root -p
 ```
 
 ### Vấn đề gặp phải
-Container MySQL: chia sẻ dữ liệu giữa máy host và container. (đã được anh Thành hỗ trợ)
-Bị lỗi khi chạy docker compose.
+- Container MySQL: chia sẻ dữ liệu giữa máy host và container. (đã được anh Thành hỗ trợ)
+- Bị lỗi khi chạy docker compose.
 
 
