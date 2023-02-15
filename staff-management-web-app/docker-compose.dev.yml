@@ -1,6 +1,4 @@
-# Docker compose
 version: '3.8'
-#container => services 
 services:
    mysql-springboot-container:
       image: mysql:8.0.28
@@ -26,7 +24,6 @@ services:
          - ./:/app
       networks:
          - backend
-#create network
 networks:
   backend:
     name: spring-app-network

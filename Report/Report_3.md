@@ -1,6 +1,6 @@
 # Báo cáo tuần 3
 ### Nội dung công việc
-Viết docker compose:
+Triển khai docker compose:
 
 - container => services
 ```
@@ -38,7 +38,7 @@ volumes:
   mysql-springboot-config-deamond
 ```
 
-- Triển khai tệp Docker Compose: 
+- Build tệp Docker Compose: 
 ```
 docker-compose-f docker-compose.dev.yml up --build
 ```
