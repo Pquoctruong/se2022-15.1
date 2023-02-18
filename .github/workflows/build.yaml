@@ -1,4 +1,4 @@
-name: Springboot-docker
+name: springboot-docker
 on:
   push:
     branches: [ "main" ]
@@ -19,7 +19,7 @@ job:
           password: ${{ secrets.DOCKERHUB_ACESS_TOKEN }}
 
       - name: Setup Docker Build
-        uses: docker/setup-buildx-action@v1
+        uses: docker/setup-buildx-action@v2
         id: buildx
 
       - name: Buid and Push
@@ -30,7 +30,7 @@ job:
           file: ./staff-management-web-app/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ screts.DOCKERHUB_USERNAME}}/Springboot-docker
+          tags: ${{ secrets.DOCKERHUB_USERNAME}}/app:latest
       
       - name: Verify
         run: echo ${{ steps.docker_build.outputs.digest}}
