@@ -29,7 +29,7 @@ job:
         id: docker_build
         with:
           context: ./
-          file: ./Dockerfile
+          file: ./staff-management-web-app/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
           tags: ${{ screts.DOCKERHUB_USERNAME}}/Springboot-docker
