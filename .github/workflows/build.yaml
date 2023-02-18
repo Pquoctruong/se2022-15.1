@@ -28,7 +28,7 @@ job:
         uses: docker/buid-push-action@v2
         id: docker_build
         with:
-          context: ./
+          context: ./staff-management-web-app
           file: ./staff-management-web-app/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
