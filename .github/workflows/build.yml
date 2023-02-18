@@ -25,7 +25,7 @@ job:
         with:
           context: ./staff-management-web-app
           file: ./staff-management-web-app/Dockerfile
-          builder: ${{ steps.build.outputs.name }}
+          builder: ${{ steps.buildx.outputs.name }}
           push: true
           tags: ${{ screts.DOCKERHUB_USERNAME}}/Springboot-docker
       
